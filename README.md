@@ -1,9 +1,6 @@
 # canvas-captcha
 
 ## Samples
-
-- rjdx
-
   ![Example](https://cdn.discordapp.com/attachments/525909915915649034/541361548896239628/captcha.png)
 
 ```js
