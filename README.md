@@ -14,3 +14,5 @@ const text = captcha.drawText(ctx);
 canvas.toBuffer;
 console.log(text);
 ```
+
+This captcha generator was based on [here](https://github.com/Claude-Ray/canvas-captcha). I removed "useless" features and added features to make customizing the captchas easier. One of the biggest additions was making the captchas easy to read.
