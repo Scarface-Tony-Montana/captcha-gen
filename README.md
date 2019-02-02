@@ -1,4 +1,4 @@
-# canvas-captcha
+# Captcha generator (canvas)
 
 ## Samples
   ![Example](https://cdn.discordapp.com/attachments/525909915915649034/541358189916979221/captcha.png)
