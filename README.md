@@ -1,7 +1,7 @@
 # canvas-captcha
 
 ## Samples
-  ![Example](https://cdn.discordapp.com/attachments/525909915915649034/541361548896239628/captcha.png)
+  ![Example](https://cdn.discordapp.com/attachments/525909915915649034/541358189916979221/captcha.png)
 
 ```js
 Const captcha = new Captcha(120, 50, 4);
