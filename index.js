@@ -83,7 +83,7 @@ class Captcha {
     this.drawLine(ctx);
     const text = this.drawText(ctx);
     const buffer = canvas.toBuffer();
-    return { buffer: buffer, text: text.toLowerCase() };
+    return { buffer: buffer, text: text };
   }
 
   /**
@@ -110,10 +110,11 @@ class Captcha {
    */
   drawText(ctx) {
     const text = this._randomChars();
+    ctx.globalAlpha = 1;
 
     for (let i = 0; i < this.length; i++) {
       ctx.font = `${this.opts.fontSize}px ${this.opts.fontFamily}`;
-      ctx.fillStyle = this._randomColorReadable();
+      ctx.fillStyle = '#23272A'
       const x = this.opts.borderWidth + (i + Math.random() / 2 - 0.25) * this.opts.wordSpace;
       const y = this.height * 0.8;
       ctx.fillText(text[i], x, y);
@@ -130,7 +131,7 @@ class Captcha {
    */
   drawLine(ctx) {
     ctx.lineWidth = this.opts.lineWidth;
-    ctx.globalAlpha = 0.2;
+    ctx.globalAlpha = 0.3;
 
     for (let i = 0; i < this.length; i++) {
       ctx.strokeStyle = this._randomColor();
