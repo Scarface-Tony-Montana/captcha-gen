@@ -80,8 +80,9 @@ class Captcha {
    */
   createCaptcha() {
     const { canvas, ctx } = this.initCanvas();
-    const text = this.drawText(ctx);
+    this.globalAlpha = 0.2
     this.drawLine(ctx);
+    const text = this.drawText(ctx);
     const buffer = canvas.toBuffer();
     return { buffer: buffer, text: text.toLowerCase() };
   }
