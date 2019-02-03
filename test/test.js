@@ -9,4 +9,4 @@ const { buffer, text } = Captcha.createCaptcha();
 fs.writeFile('image.png', buffer, (err) => {
   if (err) throw err;
   console.log('[Generated] Text:', text);
-})
+});

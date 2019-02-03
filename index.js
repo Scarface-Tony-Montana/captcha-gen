@@ -82,7 +82,7 @@ class Captcha {
     const { canvas, ctx } = this.initCanvas();
     const text = this.drawText(ctx);
     this.drawLine(ctx);
-    const buffer = this.toDataURL(canvas);
+    const buffer = canvas.toBuffer();
     return { buffer: buffer, text: text.toLowerCase() };
   }
 
