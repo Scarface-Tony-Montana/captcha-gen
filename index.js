@@ -80,7 +80,6 @@ class Captcha {
    */
   createCaptcha() {
     const { canvas, ctx } = this.initCanvas();
-    this.globalAlpha = 0.2
     this.drawLine(ctx);
     const text = this.drawText(ctx);
     const buffer = canvas.toBuffer();
@@ -131,14 +130,13 @@ class Captcha {
    */
   drawLine(ctx) {
     ctx.lineWidth = this.opts.lineWidth;
-    let lines = this._randomInt(this.opts.minLines, this.opts.maxLines);
-    for (let i = 0; i <= lines; i++) {
-      let endY = _.random(0, this.height);
+    ctx.globalAlpha = 0.2;
+
+    for (let i = 0; i < this.length; i++) {
       ctx.strokeStyle = this._randomColor();
       ctx.beginPath();
-      ctx.moveTo(_.random(0, this.width * .25), _.random(0, this.height));
-      ctx.quadraticCurveTo(0, _.random(0, this.height), _.random(this.width * .75, this.width), endY)
-     // ctx.lineTo(this.width, _.random(0, this.height));
+      ctx.moveTo(0, _.random(0, this.height));
+      ctx.lineTo(this.width, _.random(0, this.height));
       ctx.stroke();
     }
   }
