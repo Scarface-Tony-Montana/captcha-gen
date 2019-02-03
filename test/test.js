@@ -1,15 +1,12 @@
 // Require Packages
-const Captcha = require('../index.js');
+const Captcha = new (require('../index.js'))(150, 50, 5, { fontSize: 55 }); // Define Captcha Template
 const fs = require('fs');
 
 // Generate Captcha
-const captcha = new Captcha(150, 50, 5, { fontSize: 55 }); 
-const { canvas, ctx } = captcha.initCanvas();
-captcha.drawLine(ctx);
-const text = captcha.drawText(ctx);
+const { buffer, text } = Captcha.createCaptcha();
 
 // Write Captcha
-fs.writeFile('image.png', canvas.toBuffer(), (err) => {
+fs.writeFile('image.png', buffer, (err) => {
   if (err) throw err;
-  console.log('Generated!');
-});
+  console.log('[Generated] Text:', text);
+})
